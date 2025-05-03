@@ -120,7 +120,27 @@
   </footer>
 
   <script>
-    const correctAnswers = ['A', 'A', 'B', 'B', 'A', 'B', 'A', 'B', 'A', 'A', 'B', 'B', 'B', 'A', 'B'];
+    const correctAnswers = [
+      'A', 'A', 'B', 'B', 'A', 'B', 'A', 'B', 'A', 'A', 'B', 'B', 'B', 'A', 'B'
+    ];
+    const texts = [
+      { A: 'Text A for Question 1', B: 'Text B for Question 1' },
+      { A: 'Text A for Question 2', B: 'Text B for Question 2' },
+      { A: 'Text A for Question 3', B: 'Text B for Question 3' },
+      { A: 'Text A for Question 4', B: 'Text B for Question 4' },
+      { A: 'Text A for Question 5', B: 'Text B for Question 5' },
+      { A: 'Text A for Question 6', B: 'Text B for Question 6' },
+      { A: 'Text A for Question 7', B: 'Text B for Question 7' },
+      { A: 'Text A for Question 8', B: 'Text B for Question 8' },
+      { A: 'Text A for Question 9', B: 'Text B for Question 9' },
+      { A: 'Text A for Question 10', B: 'Text B for Question 10' },
+      { A: 'Text A for Question 11', B: 'Text B for Question 11' },
+      { A: 'Text A for Question 12', B: 'Text B for Question 12' },
+      { A: 'Text A for Question 13', B: 'Text B for Question 13' },
+      { A: 'Text A for Question 14', B: 'Text B for Question 14' },
+      { A: 'Text A for Question 15', B: 'Text B for Question 15' }
+    ];
+
     let currentQuestion = 0;
     let score = 0;
 
@@ -143,8 +163,8 @@
         showScore();
         return;
       }
-      document.getElementById('textA').textContent = `Text A for Question ${currentQuestion + 1}`;
-      document.getElementById('textB').textContent = `Text B for Question ${currentQuestion + 1}`;
+      document.getElementById('textA').textContent = texts[currentQuestion].A;
+      document.getElementById('textB').textContent = texts[currentQuestion].B;
       document.getElementById('result').textContent = '';
     }
 
@@ -165,8 +185,8 @@
       document.getElementById('score').style.display = 'none';
       document.getElementById('restartBtn').style.display = 'none';
       document.getElementById('nextBtnContainer').style.display = 'block';
-      document.getElementById('textA').textContent = 'Text A for Question 1';
-      document.getElementById('textB').textContent = 'Text B for Question 1';
+      document.getElementById('textA').textContent = texts[0].A;
+      document.getElementById('textB').textContent = texts[0].B;
       document.getElementById('result').textContent = '';
     }
   </script>
