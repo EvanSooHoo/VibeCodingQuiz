@@ -113,12 +113,32 @@
   </header>
 
   <div class="quiz-container" id="quiz">
-    <!-- Example of 1 question structure -->
+    <!-- Question 1 -->
     <div class="question" data-correct="A">
-      <div class="prompt">Responding to prompt: Describe a sunset</div>
+      <div class="prompt">Responding to prompt: Write me a ten line poem about Corgi Con. It's a gathering at San Francisco beach with upwards of 1000 corgis.</div>
       <div class="options">
-        <div class="option"><strong>Option A:</strong><p>The sun sets in a blaze of orange and pink, casting long shadows across the field.</p></div>
-        <div class="option"><strong>Option B:</strong><p>Sunset colors activate and generate pixelated chromatic gradients on horizon surfaces.</p></div>
+        <div class="option">
+          <strong>Option A:</strong>
+          <p>
+            <strong>Golden Fields Of Corgis</strong><br>
+            The sunlight etched in memory<br>
+            the sand, the tents, the crowd<br>
+            the unleashed corgis running free<br>
+            their coats of white, black, gold<br>
+            and brown<br>
+            Eyes, bear witness<br>
+            see them run<br>
+            their bodies are like bakery buns<br>
+            such short, small cuteness<br>
+            frames with fluff<br>
+            like half-sized dogs<br>
+            when half's enough
+          </p>
+        </div>
+        <div class="option">
+          <strong>Option B:</strong>
+          <p>A vast beach covered with fur, where tiny dogs bark and blur. Joyful corgis play in waves, chasing dreams that each heart craves. Fluffy butts and festive gear, spreading smiles from ear to ear. Leaping, running, digging holes, frolicking in cheerful roles. Corgi Con, a dog parade, where every tail is gladly swayed.</p>
+        </div>
       </div>
       <div class="choice-buttons">
         <button onclick="choose(this, 'A')">Choose A</button>
@@ -126,8 +146,6 @@
       </div>
       <div class="result"></div>
     </div>
-
-    <!-- Duplicate and replace content as needed for 15 questions -->
   </div>
 
   <div id="score" style="display: none;"></div>
@@ -156,7 +174,6 @@
         questionDiv.dataset.score = '0';
       }
 
-      // Show next question or score
       const allQuestions = Array.from(document.querySelectorAll('.question'));
       const answered = allQuestions.filter(q => q.classList.contains('answered'));
 
