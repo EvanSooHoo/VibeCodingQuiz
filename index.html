@@ -58,9 +58,9 @@
     .option {
       background: white;
       border: 1px solid #ccc;
-      padding: 1rem;
-      width: 400px;
-      height: 250px;
+      padding: 1.5rem;
+      width: 500px;
+      height: 300px;
       overflow-y: auto;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       border-radius: 8px;
@@ -146,6 +146,27 @@
       </div>
       <div class="result"></div>
     </div>
+
+    <!-- Question 2 -->
+    <div class="question" data-correct="A">
+      <div class="prompt">Responding to prompt: Why was Scott Galloway in White Lotus, Season 3?</div>
+      <div class="options">
+        <div class="option">
+          <strong>Option A:</strong>
+          <p>It is unclear why Scott Galloway was in White Lotus. Some articles indicate that cameos are common in the series, but Scott Galloway is not an actor and, according to the Scott Galloway Podcast, required some coaching for his few lines.</p>
+        </div>
+        <div class="option">
+          <strong>Option B:</strong>
+          <p>Scott Galloway's appearance in White Lotus Season 3 was a surprise to many. His cameo likely reflects the show's desire to incorporate figures from various cultural spheres. Though not traditionally an actor, his inclusion added a layer of realism and intrigue to the storyline.</p>
+        </div>
+      </div>
+      <div class="choice-buttons">
+        <button onclick="choose(this, 'A')">Choose A</button>
+        <button onclick="choose(this, 'B')">Choose B</button>
+      </div>
+      <div class="result"></div>
+    </div>
+
   </div>
 
   <div id="score" style="display: none;"></div>
