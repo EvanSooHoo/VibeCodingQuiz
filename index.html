@@ -44,7 +44,7 @@
     .prompt {
       font-weight: bold;
       margin-bottom: 1rem;
-      max-width: 600px;
+      max-width: 500px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -59,8 +59,8 @@
       background: white;
       border: 1px solid #ccc;
       padding: 2rem;
-      width: 600px;
-      height: 350px;
+      width: 650px;
+      height: 400px;
       overflow-y: auto;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       border-radius: 8px;
@@ -115,29 +115,36 @@
   <div class="quiz-container" id="quiz">
     <!-- Question 1 -->
     <div class="question" data-correct="A">
-      <div class="prompt">Responding to prompt: Write me a ten line poem about Corgi Con. It's a gathering at San Francisco beach with upwards of 1000 corgis.</div>
+      <div class="prompt">Responding to prompt: Write me a ten line poem about corgi con. its a gathering at san francisco beach with upwards of 1000 corgis.</div>
       <div class="options">
         <div class="option">
           <strong>Option A:</strong>
-          <p>
-            <strong>Golden Fields Of Corgis</strong><br>
-            The sunlight etched in memory<br>
-            the sand, the tents, the crowd<br>
-            the unleashed corgis running free<br>
-            their coats of white, black, gold<br>
-            and brown<br>
-            Eyes, bear witness<br>
-            see them run<br>
-            their bodies are like bakery buns<br>
-            such short, small cuteness<br>
-            frames with fluff<br>
-            like half-sized dogs<br>
-            when half's enough
-          </p>
+          <p>Golden Fields Of Corgis<br><br>
+          The sunlight etched in memory<br>
+          the sand, the tents, the crowd<br>
+          the unleashed corgis running free<br>
+          their coats of white, black, gold<br>
+          and brown<br>
+          Eyes, bear witness<br>
+          see them run<br>
+          their bodies are like bakery buns<br>
+          such short, small cuteness<br>
+          frames with fluff<br>
+          like half-sized dogs<br>
+          when half's enough</p>
         </div>
         <div class="option">
           <strong>Option B:</strong>
-          <p>A vast beach covered with fur, where tiny dogs bark and blur. Joyful corgis play in waves, chasing dreams that each heart craves. Fluffy butts and festive gear, spreading smiles from ear to ear. Leaping, running, digging holes, frolicking in cheerful roles. Corgi Con, a dog parade, where every tail is gladly swayed.</p>
+          <p>On Ocean Beach sand,<br>
+          A thousand corgis gather—<br>
+          Barking tides of joy.<br>
+          Snouts up to the breeze,<br>
+          They race, roll, and chase each tail,<br>
+          In sweatered delight.<br>
+          Fluffy monarchs bark,<br>
+          As waves crash applause nearby,<br>
+          Their stubby legs proud.<br>
+          Corgi Con, a dream unleashed.</p>
         </div>
       </div>
       <div class="choice-buttons">
@@ -157,7 +164,7 @@
         </div>
         <div class="option">
           <strong>Option B:</strong>
-          <p>Scott Galloway's appearance in White Lotus Season 3 was a surprise to many. His cameo likely reflects the show's desire to incorporate figures from various cultural spheres. Though not traditionally an actor, his inclusion added a layer of realism and intrigue to the storyline.</p>
+          <p>Scott Galloway's appearance in White Lotus, Season 3, was a creative decision meant to underscore the show's theme of unexpected power dynamics. Though not a traditional actor, his strong personality brought a unique realism. The director wanted a familiar face with intellectual gravitas to contrast with the resort’s decadence. His role, while brief, added layers to the narrative. Galloway reportedly enjoyed the experience despite initial nervousness.</p>
         </div>
       </div>
       <div class="choice-buttons">
@@ -173,7 +180,7 @@
       <div class="options">
         <div class="option">
           <strong>Option A:</strong>
-          <p>Tim Denning is a prolific content creator who has built a large following through his consistent and motivational posts. He often shares insights about success, writing, and self-improvement, making his content accessible and engaging for aspiring writers and entrepreneurs. His influence in the blogging community is notable and continues to grow.</p>
+          <p>Tim Denning is a popular online writer who provides motivational content and financial advice. His writing is accessible, often focusing on personal growth and success. He has a strong following and has published many articles on Medium and LinkedIn. His influence continues to grow due to his consistent posting and engaging tone.</p>
         </div>
         <div class="option">
           <strong>Option B:</strong>
@@ -187,6 +194,89 @@
       <div class="result"></div>
     </div>
 
+    <!-- Question 4 -->
+    <div class="question" data-correct="B">
+      <div class="prompt">Responding to prompt: In the book Lord Of The Flies, what does the conch symbolize?</div>
+      <div class="options">
+        <div class="option">
+          <strong>Option A:</strong>
+          <p>The conch in Lord of the Flies symbolizes order and structured society. Its presence provides the boys a way to establish rules and hold meetings. As the conch loses its influence, it parallels the breakdown of civilization on the island. Eventually, when the conch is destroyed, it marks the complete descent into savagery. The shell’s journey mirrors the group's devolution into chaos.</p>
+        </div>
+        <div class="option">
+          <strong>Option B:</strong>
+          <p>The symbolism in Lord Of The Flies, as is the case for virtually any piece of literature, is subject to debate. Many would argue that it symbolizes order, and that its destruction represents a total descent into chaos. This can be substantiated by the effect Ralph (who represents the ego, and not the id) has when using the conch. That being said, virtually no novel of value is restricted to just one interpretation.</p>
+        </div>
+      </div>
+      <div class="choice-buttons">
+        <button onclick="choose(this, 'A')">Choose A</button>
+        <button onclick="choose(this, 'B')">Choose B</button>
+      </div>
+      <div class="result"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" data-correct="A">
+      <div class="prompt">Responding to prompt: Is the 2025 movie "warfare" pro-war, or anti-war?</div>
+      <div class="options">
+        <div class="option">
+          <strong>Option A:</strong>
+          <p>The movie "warfare" was not intended by the director to be anti-war, but it can certainly be interpreted that way. Some users on the Reddit r/movies thread contend that the house itself is a symbol for Iraq, a structure that *spoilers* is devastated by a battle. When the American forces leave, overwhelming Al-Qaeda forces return. Though the American forces appear to be capable of defeating them in conventional warfare, the entire war seems to be arguably ineffective in the long-run.</p>
+        </div>
+        <div class="option">
+          <strong>Option B:</strong>
+          <p>The 2025 movie "warfare" delivers a gritty depiction of modern battle through cinematic realism. While not overtly anti-war, its haunting visuals and emotional storytelling emphasize the cost of conflict. Critics suggest it straddles both camps—presenting bravery and camaraderie alongside trauma and loss. Viewers leave with a complex, reflective impression rather than a clear ideological stance.</p>
+        </div>
+      </div>
+      <div class="choice-buttons">
+        <button onclick="choose(this, 'A')">Choose A</button>
+        <button onclick="choose(this, 'B')">Choose B</button>
+      </div>
+      <div class="result"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" data-correct="B">
+      <div class="prompt">Responding to prompt: What is the book Fahrenheit 451 attempting to say? In other words, what is the meaning of the work as a whole?</div>
+      <div class="options">
+        <div class="option">
+          <strong>Option A:</strong>
+          <p>Fahrenheit 451 warns about the dangers of censorship and the loss of intellectual freedom. In the society depicted, books are banned, and independent thinking is discouraged. This suppression creates a population that is easily manipulated. The novel highlights the importance of knowledge and personal connection. Ultimately, it promotes resistance against societal control through education and awareness.</p>
+        </div>
+        <div class="option">
+          <strong>Option B:</strong>
+          <p>The meaning of the novel Fahrenheit 451 is debatable, but the author's actual intent was to convey feelings he had regarding television. Though it is valid to argue that he was cautioning against the detrimental effects of book-burning and censorship, another interpretation is that the novel criticizes entertainment, mass media, and a dystopian society incapable of thorough and independent thought. This is directly demonstrated by the book's depiction of televisions, a hedonistic pursuit of media entertainment to distract from an impending war, and general disdain for intellectuals and intellectual discourse of any kind.</p>
+        </div>
+      </div>
+      <div class="choice-buttons">
+        <button onclick="choose(this, 'A')">Choose A</button>
+        <button onclick="choose(this, 'B')">Choose B</button>
+      </div>
+      <div class="result"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" data-correct="A">
+      <div class="prompt">Responding to prompt: Write a haiku about a shih tzu</div>
+      <div class="options">
+        <div class="option">
+          <strong>Option A:</strong>
+          <p>this is a shih tzu<br>
+          he likes jumping on the couch<br>
+          but he's way too short</p>
+        </div>
+        <div class="option">
+          <strong>Option B:</strong>
+          <p>Fluffy tail bouncing<br>
+          through the morning city streets—<br>
+          a tiny lion.</p>
+        </div>
+      </div>
+      <div class="choice-buttons">
+        <button onclick="choose(this, 'A')">Choose A</button>
+        <button onclick="choose(this, 'B')">Choose B</button>
+      </div>
+      <div class="result"></div>
+    </div>
   </div>
 
   <div id="score" style="display: none;"></div>
@@ -197,6 +287,15 @@
   </footer>
 
   <script>
+    let currentQuestion = 0;
+
+    function showQuestion(index) {
+      const questions = document.querySelectorAll('.question');
+      questions.forEach((q, i) => {
+        q.style.display = i === index ? 'block' : 'none';
+      });
+    }
+
     function choose(btn, choice) {
       const questionDiv = btn.closest('.question');
       const correct = questionDiv.dataset.correct;
@@ -215,11 +314,13 @@
         questionDiv.dataset.score = '0';
       }
 
-      const allQuestions = Array.from(document.querySelectorAll('.question'));
-      const answered = allQuestions.filter(q => q.classList.contains('answered'));
+      const allQuestions = document.querySelectorAll('.question');
+      currentQuestion++;
 
-      if (answered.length === allQuestions.length) {
-        const score = answered.reduce((sum, q) => sum + Number(q.dataset.score || 0), 0);
+      if (currentQuestion < allQuestions.length) {
+        setTimeout(() => showQuestion(currentQuestion), 1000);
+      } else {
+        const score = Array.from(allQuestions).reduce((sum, q) => sum + Number(q.dataset.score || 0), 0);
         document.getElementById('score').textContent = `You got ${score} out of ${allQuestions.length} correct.`;
         document.getElementById('score').style.display = 'block';
         document.getElementById('restartBtn').style.display = 'block';
@@ -233,12 +334,15 @@
         q.querySelector('.result').textContent = '';
         q.dataset.score = '0';
       });
+      currentQuestion = 0;
       document.getElementById('score').style.display = 'none';
       document.getElementById('restartBtn').style.display = 'none';
+      showQuestion(currentQuestion);
     }
 
     window.onload = () => {
       document.getElementById('quiz').style.display = 'flex';
+      showQuestion(currentQuestion);
     }
   </script>
 </body>
