@@ -41,6 +41,10 @@
       margin-bottom: 2rem;
       text-align: center;
     }
+    .prompt {
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
     .options {
       display: flex;
       gap: 2rem;
@@ -103,12 +107,12 @@
   <header>
     <h1>Can You Spot the AI?</h1>
     <p>Choose the text you think was written by a human.</p>
-    <h3>Responding to prompt:</h3>
   </header>
 
   <div class="quiz-container" id="quiz">
     <!-- Example of 1 question structure -->
     <div class="question" data-correct="A">
+      <div class="prompt">Responding to prompt: Describe a sunset</div>
       <div class="options">
         <div class="option"><strong>Option A:</strong><p>The sun sets in a blaze of orange and pink, casting long shadows across the field.</p></div>
         <div class="option"><strong>Option B:</strong><p>Sunset colors activate and generate pixelated chromatic gradients on horizon surfaces.</p></div>
