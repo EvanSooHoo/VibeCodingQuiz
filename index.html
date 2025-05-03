@@ -74,14 +74,14 @@
     <h3>Responding to prompt:</h3>
   </header>
 
-  <div class="quiz-container">
+  <div class="quiz-container" id="quiz-container">
     <div class="option" id="optionA">
       <strong>Option A:</strong>
-      <p id="textA">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      <p id="textA">Text A for Question 1</p>
     </div>
     <div class="option" id="optionB">
       <strong>Option B:</strong>
-      <p id="textB">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      <p id="textB">Text B for Question 1</p>
     </div>
   </div>
 
@@ -94,7 +94,7 @@
   <div id="score" style="display: none;"></div>
   <button id="restartBtn" style="display: none;" onclick="restartQuiz()">Take Quiz Again</button>
 
-  <div style="margin-top: 1rem;">
+  <div style="margin-top: 1rem;" id="nextBtnContainer">
     <button onclick="nextQuestion()">Next Question</button>
   </div>
 
@@ -126,7 +126,6 @@
         showScore();
         return;
       }
-      // Placeholder text logic; replace with real content as needed
       document.getElementById('textA').textContent = `Text A for Question ${currentQuestion + 1}`;
       document.getElementById('textB').textContent = `Text B for Question ${currentQuestion + 1}`;
       document.getElementById('result').textContent = '';
@@ -135,6 +134,7 @@
     function showScore() {
       document.getElementById('quiz-container').style.display = 'none';
       document.getElementById('result').style.display = 'none';
+      document.getElementById('nextBtnContainer').style.display = 'none';
       document.getElementById('score').style.display = 'block';
       document.getElementById('restartBtn').style.display = 'block';
       document.getElementById('score').textContent = `You got ${score} out of ${correctAnswers.length} correct.`;
@@ -147,6 +147,7 @@
       document.getElementById('result').style.display = 'block';
       document.getElementById('score').style.display = 'none';
       document.getElementById('restartBtn').style.display = 'none';
+      document.getElementById('nextBtnContainer').style.display = 'block';
       document.getElementById('textA').textContent = 'Text A for Question 1';
       document.getElementById('textB').textContent = 'Text B for Question 1';
       document.getElementById('result').textContent = '';
