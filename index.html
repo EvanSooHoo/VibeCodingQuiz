@@ -33,11 +33,20 @@
       text-align: center;
     }
     .quiz-container {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    .question {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .options {
       display: flex;
-      justify-content: center;
       gap: 2rem;
-      margin-bottom: 1rem;
       flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 1rem;
     }
     .option {
       background: white;
@@ -53,6 +62,7 @@
       margin: 1rem;
       display: flex;
       gap: 1rem;
+      justify-content: center;
     }
     button {
       padding: 0.5rem 1rem;
@@ -60,6 +70,10 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+    }
+    .result {
+      margin-top: 0.5rem;
+      text-align: center;
     }
     .correct {
       color: green;
@@ -70,6 +84,7 @@
     #score {
       font-size: 1.2rem;
       margin-top: 2rem;
+      text-align: center;
     }
     #restartBtn {
       margin-top: 1rem;
@@ -91,103 +106,74 @@
     <h3>Responding to prompt:</h3>
   </header>
 
-  <div class="quiz-container" id="quiz-container">
-    <div class="option" id="optionA">
-      <strong>Option A:</strong>
-      <p id="textA">Text A for Question 1</p>
+  <div class="quiz-container" id="quiz">
+    <!-- Example of 1 question structure -->
+    <div class="question" data-correct="A">
+      <div class="options">
+        <div class="option"><strong>Option A:</strong><p>The sun sets in a blaze of orange and pink, casting long shadows across the field.</p></div>
+        <div class="option"><strong>Option B:</strong><p>Sunset colors activate and generate pixelated chromatic gradients on horizon surfaces.</p></div>
+      </div>
+      <div class="choice-buttons">
+        <button onclick="choose(this, 'A')">Choose A</button>
+        <button onclick="choose(this, 'B')">Choose B</button>
+      </div>
+      <div class="result"></div>
     </div>
-    <div class="option" id="optionB">
-      <strong>Option B:</strong>
-      <p id="textB">Text B for Question 1</p>
-    </div>
+
+    <!-- Duplicate and replace content as needed for 15 questions -->
   </div>
 
-  <div class="choice-buttons">
-    <button onclick="choose('A')">Choose A</button>
-    <button onclick="choose('B')">Choose B</button>
-  </div>
-
-  <div id="result"></div>
   <div id="score" style="display: none;"></div>
   <button id="restartBtn" style="display: none;" onclick="restartQuiz()">Take Quiz Again</button>
-
-  <div style="margin-top: 1rem;" id="nextBtnContainer">
-    <button onclick="nextQuestion()">Next Question</button>
-  </div>
 
   <footer>
     <p>&copy; 2025 AI or Human Project</p>
   </footer>
 
   <script>
-    const correctAnswers = [
-      'A', 'A', 'B', 'B', 'A', 'B', 'A', 'B', 'A', 'A', 'B', 'B', 'B', 'A', 'B'
-    ];
-    const texts = [
-      { A: 'Text A for Question 1', B: 'Text B for Question 1' },
-      { A: 'Text A for Question 2', B: 'Text B for Question 2' },
-      { A: 'Text A for Question 3', B: 'Text B for Question 3' },
-      { A: 'Text A for Question 4', B: 'Text B for Question 4' },
-      { A: 'Text A for Question 5', B: 'Text B for Question 5' },
-      { A: 'Text A for Question 6', B: 'Text B for Question 6' },
-      { A: 'Text A for Question 7', B: 'Text B for Question 7' },
-      { A: 'Text A for Question 8', B: 'Text B for Question 8' },
-      { A: 'Text A for Question 9', B: 'Text B for Question 9' },
-      { A: 'Text A for Question 10', B: 'Text B for Question 10' },
-      { A: 'Text A for Question 11', B: 'Text B for Question 11' },
-      { A: 'Text A for Question 12', B: 'Text B for Question 12' },
-      { A: 'Text A for Question 13', B: 'Text B for Question 13' },
-      { A: 'Text A for Question 14', B: 'Text B for Question 14' },
-      { A: 'Text A for Question 15', B: 'Text B for Question 15' }
-    ];
+    function choose(btn, choice) {
+      const questionDiv = btn.closest('.question');
+      const correct = questionDiv.dataset.correct;
+      const resultDiv = questionDiv.querySelector('.result');
 
-    let currentQuestion = 0;
-    let score = 0;
+      if (questionDiv.classList.contains('answered')) return;
+      questionDiv.classList.add('answered');
 
-    function choose(choice) {
-      const result = document.getElementById('result');
-      const correct = correctAnswers[currentQuestion];
       if (choice === correct) {
-        result.textContent = `Correct! Option ${correct} was human-written.`;
-        result.className = 'correct';
-        score++;
+        resultDiv.textContent = `Correct! Option ${correct} was human-written.`;
+        resultDiv.className = 'result correct';
+        questionDiv.dataset.score = '1';
       } else {
-        result.textContent = `Wrong! Option ${correct} was human-written.`;
-        result.className = 'incorrect';
+        resultDiv.textContent = `Wrong! Option ${correct} was human-written.`;
+        resultDiv.className = 'result incorrect';
+        questionDiv.dataset.score = '0';
       }
-    }
 
-    function nextQuestion() {
-      currentQuestion++;
-      if (currentQuestion >= correctAnswers.length) {
-        showScore();
-        return;
+      // Show next question or score
+      const allQuestions = Array.from(document.querySelectorAll('.question'));
+      const answered = allQuestions.filter(q => q.classList.contains('answered'));
+
+      if (answered.length === allQuestions.length) {
+        const score = answered.reduce((sum, q) => sum + Number(q.dataset.score || 0), 0);
+        document.getElementById('score').textContent = `You got ${score} out of ${allQuestions.length} correct.`;
+        document.getElementById('score').style.display = 'block';
+        document.getElementById('restartBtn').style.display = 'block';
       }
-      document.getElementById('textA').textContent = texts[currentQuestion].A;
-      document.getElementById('textB').textContent = texts[currentQuestion].B;
-      document.getElementById('result').textContent = '';
-    }
-
-    function showScore() {
-      document.getElementById('quiz-container').style.display = 'none';
-      document.getElementById('result').style.display = 'none';
-      document.getElementById('nextBtnContainer').style.display = 'none';
-      document.getElementById('score').style.display = 'block';
-      document.getElementById('restartBtn').style.display = 'block';
-      document.getElementById('score').textContent = `You got ${score} out of ${correctAnswers.length} correct.`;
     }
 
     function restartQuiz() {
-      currentQuestion = 0;
-      score = 0;
-      document.getElementById('quiz-container').style.display = 'flex';
-      document.getElementById('result').style.display = 'block';
+      const allQuestions = document.querySelectorAll('.question');
+      allQuestions.forEach(q => {
+        q.classList.remove('answered');
+        q.querySelector('.result').textContent = '';
+        q.dataset.score = '0';
+      });
       document.getElementById('score').style.display = 'none';
       document.getElementById('restartBtn').style.display = 'none';
-      document.getElementById('nextBtnContainer').style.display = 'block';
-      document.getElementById('textA').textContent = texts[0].A;
-      document.getElementById('textB').textContent = texts[0].B;
-      document.getElementById('result').textContent = '';
+    }
+
+    window.onload = () => {
+      document.getElementById('quiz').style.display = 'flex';
     }
   </script>
 </body>
